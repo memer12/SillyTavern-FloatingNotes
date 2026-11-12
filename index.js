@@ -64,7 +64,6 @@ eventSource.on(event_types.APP_INITIALIZED, () => {
     win.id = 'floating_notes_window';
     win.innerHTML = `
         <div class="fn-bar">
-            <div class="fn-handle fa-solid fa-up-down-left-right" title="Drag to move"></div>
             <div class="fn-close fa-solid fa-xmark" title="Close"></div>
         </div>
         <div class="fn-dragzone" title="Drag to move"></div>
