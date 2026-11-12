@@ -4,8 +4,17 @@ const MODULE = 'floating_notes';
 const DEFAULTS = { open: false, x: 80, y: 120, w: 320, h: 240, text: '' };
 
 function getSettings() {
-    extensionSettings[MODULE] = Object.assign({}, DEFAULTS, extensionSettings[MODULE]);
-    return extensionSettings[MODULE];
+    // Always return the same object so every part of the extension writes to the saved settings
+    if (!extensionSettings[MODULE]) {
+        extensionSettings[MODULE] = {};
+    }
+    const settings = extensionSettings[MODULE];
+    for (const key of Object.keys(DEFAULTS)) {
+        if (!Object.hasOwn(settings, key)) {
+            settings[key] = DEFAULTS[key];
+        }
+    }
+    return settings;
 }
 
 function clampToViewport(win, settings) {

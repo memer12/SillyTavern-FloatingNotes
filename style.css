@@ -27,7 +27,7 @@
     align-items: center;
     justify-content: flex-end;
     flex: 0 0 auto;
-    padding-bottom: 4px;
+    height: 28px;
 }
 
 #floating_notes_window .fn-handle {
@@ -54,13 +54,13 @@
     opacity: 0.6;
 }
 
-/* Invisible drag area covering the top quarter of the window */
+/* Invisible drag area covering only the header strip (stops above the text area) */
 #floating_notes_window .fn-dragzone {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    height: 25%;
+    right: 36px;
+    height: 32px;
     z-index: 1;
     cursor: grab;
     touch-action: none;
